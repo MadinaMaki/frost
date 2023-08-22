@@ -1,0 +1,13 @@
+.comment-box {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+    margin: 30px 0 0 0;
+    border: 1px solid #E5E5E5;
+}
+
+.comment-box .user-name {
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 5px 0;
+}

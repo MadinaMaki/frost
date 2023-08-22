@@ -1,0 +1,14 @@
+.container .main .order-complete {
+    display: flex;
+}
+
+.container .main .order-complete img {
+    height: 100%;
+    margin: 0 45px 0 0;
+}
+
+.container .main .order-complete p {
+    margin: 0 70px 0 0;
+    font-size: 18px;
+    color: #727272;
+}

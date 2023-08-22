@@ -1,0 +1,16 @@
+.settings {
+    background-color: #E5E5E5;
+    padding: 30px;
+}
+
+.settings span {
+    color: #1C499F;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+}
+
+.settings .category .drop-menu {
+    display: flex;
+    flex-direction: column;
+}

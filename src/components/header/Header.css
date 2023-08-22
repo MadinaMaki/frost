@@ -1,0 +1,70 @@
+.header {
+    background-color: #1E1E1E;
+    width: 100%;
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+.header .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.header .header-inner .header-logo {
+    margin: 0 5px 0 0;
+}
+
+.header .header-inner .contact p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .header-inner .contact p span {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 15px;
+}
+
+.header .header-inner .contact p span:first-child {
+    font-weight: 600;
+}
+
+.header .header-inner .auth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 10px;
+}
+
+.header .header-inner .auth a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.header .header-inner .cart {
+    position: relative;
+    cursor: pointer;
+}
+
+.header .header-inner .cart .cart-icon {
+    margin: 0 20px;
+}
+
+.header .header-inner .cart .cart-counter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: #2156BD;
+    border-radius: 50%;
+    top: 0;
+    left: 48px;
+    color: #ffffff;
+    font-weight: 700;
+}
+

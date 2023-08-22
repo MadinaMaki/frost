@@ -1,0 +1,61 @@
+.menu {
+    width: 350px;
+    position: relative;
+}
+
+.menu .button p {
+    margin-bottom: 0;
+    position: relative;
+    background-color: #F6F6F6;
+    padding: 7px 10px;
+    border: 1px solid #D3D3D3;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    transition: padding-left .5s;
+}
+
+.menu .button img {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 8px;
+    background-image: url("dropIcon.png");
+    background-repeat: no-repeat;
+    top: 15px;
+    right: 15px;
+}
+
+/*.menu .button:active img {*/
+/*    transform: rotate(180deg);*/
+/*}*/
+
+.drop_menu {
+    display: none;
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    flex-direction: column;
+}
+
+.drop_menu .drop_menu_item {
+    background-color: #F6F6F6;
+    border: 1px solid #D3D3D3;
+    border-top: none;
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: background-color .5s;
+}
+
+.drop_menu .drop_menu_item:hover {
+    background-color: #1C499F;
+}
+
+.drop_menu .drop_menu_item:hover p {
+    color: #ffffff;
+}
+
+.drop_menu .drop_menu_item p {
+    color: #000000;
+    font-weight: 400;
+}

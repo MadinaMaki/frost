@@ -1,0 +1,42 @@
+.ProductItem {
+  margin: 0 0 25px 0;
+}
+
+.ProductItem .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 30px;
+  border: 1px solid #E6E6E6;
+}
+
+.ProductItem .item .title {
+  font-weight: 600;
+  margin: 15px 0 25px 0;
+  text-transform: capitalize;
+}
+
+.ProductItem .item .sub-title {
+  margin: 0 0 10px 0;
+}
+
+.ProductItem .item img {
+  width: 80%;
+  align-self: center;
+}
+
+.ProductItem .item .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProductItem .item .bottom .price {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.ProductItem .item .bottom button {
+  font-size: 18px;
+  padding: 8px 48px;
+}

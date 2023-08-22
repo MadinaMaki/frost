@@ -1,0 +1,33 @@
+.footer {
+    background-color: #1E1E1E;
+    width: 100%;
+    padding: 55px 0;
+}
+
+.footer .footer-inner {
+    display: flex;
+    align-items: center;
+    padding: 0 45px;
+    justify-content: space-between;
+}
+
+.footer .footer-inner .info {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.footer .footer-inner .info img {
+    margin-right: 20px;
+}
+
+.footer .footer-inner .info p {
+    display: flex;
+    flex-direction: column;
+    margin: 0 55px 0 0;
+}
+
+.footer .footer-inner .info .phone {
+    margin: 0 5px;
+}

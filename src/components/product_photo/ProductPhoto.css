@@ -1,0 +1,22 @@
+.product-main-img {
+    display: flex;
+    background-color: #ffffff;
+    padding: 55px 15px;
+    border: 2px solid #E5E5E5;
+}
+
+.product-img {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 0 0;
+}
+
+.product-img div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 90px;
+    height: 90px;
+    border: 2px solid #E5E5E5;
+}

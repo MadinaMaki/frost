@@ -1,0 +1,31 @@
+.container .categories {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #E5E5E5;
+    padding: 60px 70px;
+    margin: 30px 0;
+    background-color: #ffffff;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px 25px;
+}
+
+.container .categories .category-item>p {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.checkbox-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+.checkbox-type input {
+    margin-right: 12px;
+    background-color: #D3D3D3;
+}
