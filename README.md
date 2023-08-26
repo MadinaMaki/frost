@@ -1,3 +1,3 @@
-# Online auto parts store.
+# Car parts online store.
 Based on React. Using axios, react-router-dom, bootstrap
 
