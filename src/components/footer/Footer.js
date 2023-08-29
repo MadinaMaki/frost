@@ -18,7 +18,7 @@ function Footer() {
                 <div className="info">
                     <img className="phone" src={phone} alt=""/>
                     <p>
-                        <span>г. Нур-Султан</span>
+                        <span>г. Астана</span>
                         <span>+7 777 777 77 77</span>
                     </p>
                     <img className="phone" src={phone} alt=""/>

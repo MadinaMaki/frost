@@ -7,9 +7,9 @@ import DropMenu from "../../ui/drop_menu/DropMenu";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import useModal from "../../ui/useModal/useModal";
-import Modal from "../../ui/modal/Modal";
 import ModalWindow from "../../ui/modal_window/ModalWindow";
 import LogInModal from "../../ui/log_in_modal/LogInModal";
+import {useParams} from "react-router-dom";
 
 const PRODUCT_ID = 3;
 
@@ -18,6 +18,8 @@ function ProductCard() {
     const [product, setProduct] = useState([])
     const [visible, open, close] = useModal();
     const [authVisible,authOpen, authClose] = useModal();
+
+    const params = useParams();
 
     let reviewURL = 'http://frost.runtime.kz/reviews';
     let productsURL = 'http://frost.runtime.kz/products';
@@ -51,7 +53,6 @@ function ProductCard() {
                setProduct({...data})
             })
     }, [])
-
 
     return (
         <div className="container">

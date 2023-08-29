@@ -1,7 +1,7 @@
 import CartHeader from "../../components/cart_header/CartHeader";
 
 function Account() {
-    return(
+    return (
         <div className="container">
             <CartHeader titleText="Личный кабинет"/>
             <div className="personal-account">

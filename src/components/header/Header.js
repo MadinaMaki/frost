@@ -7,6 +7,7 @@ import Button, {buttonStyles} from "../../ui/button/Button"
 import {useState} from "react";
 import useModal from "../../ui/useModal/useModal";
 import LogInModal from "../../ui/log_in_modal/LogInModal";
+import {Link} from "react-router-dom";
 
 function Header() {
     const [loginVisible, loginOpen, loginClose] = useModal();
@@ -30,7 +31,9 @@ function Header() {
                 <LogInModal visible={authVisible} close={authClose}/>
             </div>
             <div className="header-inner container">
-                <img className="header-logo" src={logo}/>
+                <Link to="/">
+                    <img className="header-logo" src={logo}/>
+                </Link>
                 <div className="contact">
                     <p>
                         <span>г. Астана</span>
@@ -47,7 +50,9 @@ function Header() {
                     <a onClick={loginOpen} href="#">Зарегистрироваться</a>
                 </div>
                 <div className="cart">
-                    <img className="cart-icon" src={cart} alt="cart"/>
+                    <Link to="/cart">
+                        <img className="cart-icon" src={cart} alt="cart"/>
+                    </Link>
                     <div className="cart-counter">2</div>
                 </div>
             </div>

@@ -13,14 +13,6 @@ import Modal from "../../ui/modal/Modal";
 function Home() {
     return (
         <div>
-            <Header/>
-            {/*<ProductList/>*/}
-            {/*<CartList/>*/}
-            <ProductCard/>
-            {/*<Account/>*/}
-            {/*<ContactDetails/>*/}
-            {/*<Delivery/>*/}
-            <Footer/>
         </div>
     )
 }

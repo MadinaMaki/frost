@@ -14,14 +14,14 @@ function ProductItem(props) {
             <ModalWindow visible={visible} close={close} product={props.data.name}/>
             <div className="item">
                 <img src={plug}/>
-                <p className="title">{props.data.name}</p>
+                <Link to={"/info/" + props.product_id}>
+                    <p className="title">{props.data.name}</p>
+                </Link>
                 <div className="bottom">
                     <div className="price">{props.data.price} тг.</div>
-                    {/*<Link to='/cart'>*/}
                     <div onClick={open}>
                         <Button text="Купить" buttonStyle={buttonStyles.normal}/>
                     </div>
-                    {/*</Link>*/}
                 </div>
             </div>
         </div>

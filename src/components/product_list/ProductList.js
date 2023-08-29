@@ -19,7 +19,7 @@ function ProductList() {
             .get('http://frost.runtime.kz/products', {
                 params: {
                     page: 1,
-                    size: 3,
+                    size: 6,
                     brandId: values.brandId,
                     modelId: values.modelId,
                     generationId: values.generationId,
@@ -45,7 +45,7 @@ function ProductList() {
                 <div className="row">
                     {products.map((product, index) => {
                         return (
-                            <ProductItem key={index} data={product}/>
+                            <ProductItem key={index} data={product} product_id={product.id}/>
                         );
                     })}
                 </div>
@@ -54,7 +54,7 @@ function ProductList() {
                         axios.get('http://frost.runtime.kz/products', {
                             params: {
                                 page: page,
-                                size: 3,
+                                size: 6,
                                 brandId: values.brandId,
                                 modelId: values.modelId,
                                 generationId: values.generationId,
