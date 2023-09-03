@@ -9,6 +9,7 @@ import App from "./App"
 import OrderComplete from "./pages/orderComplere/OrderComplete";
 import ProductList from "./components/product_list/ProductList";
 import ProductItem from "./components/product_item/ProductItem";
+import ContactDetails from "./pages/contactDetails/ContactDetails";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
                 element: <Account/>
             },
             {
-                path: "order-complete",
+                path: "/contact",
+                element: <ContactDetails/>
+            },
+            {
+                path: "order_complete",
                 element: <OrderComplete/>
             },
             {

@@ -11,14 +11,14 @@ function ProductItem(props) {
 
     return (
         <div className="ProductItem col-4">
-            <ModalWindow visible={visible} close={close} product={props.data.name}/>
+            <ModalWindow visible={visible} close={close} product={props.product_name}/>
             <div className="item">
                 <img src={plug}/>
                 <Link to={"/info/" + props.product_id}>
-                    <p className="title">{props.data.name}</p>
+                    <div className="title">{props.product_name}</div>
                 </Link>
                 <div className="bottom">
-                    <div className="price">{props.data.price} тг.</div>
+                    <div className="price">{props.product_price} тг.</div>
                     <div onClick={open}>
                         <Button text="Купить" buttonStyle={buttonStyles.normal}/>
                     </div>

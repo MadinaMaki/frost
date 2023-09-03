@@ -7,6 +7,7 @@ import DropDown from "../../ui/drop_down/DropDown";
 import Navigate from "../../ui/navigate/Navigate";
 // import { Outlet } from "react-router-dom";
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 function CartList() {
     const [products, setProducts] = useState([
@@ -82,7 +83,9 @@ function CartList() {
                     </div>
                 </div>
                 <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                    <Button text="Оформить заказ" buttonStyle={buttonStyles.normal}/>
+                    <Link to="/contact">
+                        <Button text="Оформить заказ" buttonStyle={buttonStyles.normal}/>
+                    </Link>
                 </div>
             </div>
             {/*<Outlet/>*/}

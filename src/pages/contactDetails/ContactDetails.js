@@ -2,7 +2,7 @@ import CartHeader from "../../components/cart_header/CartHeader";
 import Button, {buttonStyles} from "../../ui/button/Button";
 import FormData from "../../ui/form/FormData";
 import Navigate from "../../ui/navigate/Navigate";
-import { Outlet } from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 function ContactDetails() {
     return (
@@ -29,10 +29,11 @@ function ContactDetails() {
                     </div>
                 </div>
                 <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                    <Button text="Подтвердить" buttonStyle={buttonStyles.normal}/>
+                    <Link to="/delivery">
+                        <Button text="Подтвердить" buttonStyle={buttonStyles.normal}/>
+                    </Link>
                 </div>
             </div>
-            {/*<Outlet/>*/}
         </div>
     )
 }

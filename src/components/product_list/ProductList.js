@@ -45,7 +45,7 @@ function ProductList() {
                 <div className="row">
                     {products.map((product, index) => {
                         return (
-                            <ProductItem key={index} data={product} product_id={product.id}/>
+                            <ProductItem key={index} product_name={product.name} product_id={product.id} product_price={product.price}/>
                         );
                     })}
                 </div>

@@ -11,22 +11,15 @@ function ProductPhoto() {
 
     const [mainPhoto, setMainPhoto] = useState(mainPic);
 
-    // function choosePhoto(index) {
-    //     setMainPhoto(function (){
-    //         setProductPhoto(function (prevPhotos){
-    //
-    //         });
-    //     });
-    // }
-
-    // const [mainPhoto, setMainPhoto] = useState(mainPic);
-    // const [otherPhotos, setOtherPhotos] = useState([pic1, pic2, pic3, pic4]);
-    //
-    // // Отобразить фото в главном блоке при нажатии на фото в других фото
-    // function choosePhoto(clickedPhoto){
-    //     setOtherPhotos([...otherPhotos, mainPhoto]);
-    //     setMainPhoto(clickedPhoto);
-    // }
+    function clickPhoto(index) {
+        setMainPhoto(function (){
+            setProductPhoto( (prevPhoto) => {
+                let newPhoto;
+                newPhoto = prevPhoto[index];
+                return newPhoto;
+            });
+        });
+    }
 
     return (
         <div>
@@ -37,8 +30,7 @@ function ProductPhoto() {
                 {productPhoto.map(function (photo, index){
                     return(
                         <div key={index}>
-                            {/*<img onClick={() => choosePhoto(index)} src={photo}/>*/}
-                            <img src={photo}/>
+                            <img onClick={() => clickPhoto(index)} src={photo}/>
                         </div>
                     )
                 })}
