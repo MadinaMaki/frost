@@ -20,7 +20,9 @@ function CartItem(props) {
             </div>
             <div className="product-info">
                 <span>Артикул: AC97701</span>
-                <Button2 text='Удалить из корзины'/>
+                <div onClick={() => props.deleteItem()}>
+                    <Button2 text='Удалить из корзины'/>
+                </div>
             </div>
         </div>
     )

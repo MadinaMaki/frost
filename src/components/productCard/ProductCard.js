@@ -15,9 +15,8 @@ import pic2 from "./assets/5003-02 (1).png";
 import pic3 from "./assets/5003-03 (1).png";
 import pic4 from "./assets/5003-04 (1).png";
 import mainPic from "./assets/main-picture.png";
-import data from "bootstrap/js/src/dom/data";
 
-function ProductCard(props) {
+function ProductCard() {
     const [productPhoto, setProductPhoto] = useState([pic1, pic2, pic3, pic4]);
     const [mainPhoto, setMainPhoto] = useState(mainPic);
     const [reviews, setReviews] = useState([]);
@@ -34,8 +33,6 @@ function ProductCard(props) {
     const [visible, open, close] = useModal();
     const [authVisible, authOpen, authClose] = useModal();
 
-    // const PRODUCT_ID = 3;
-
     const params = useParams();
 
     let reviewURL = 'http://frost.runtime.kz/reviews';
@@ -43,10 +40,8 @@ function ProductCard(props) {
 
     function clickPhoto(index) {
         setMainPhoto(function (){
-            setProductPhoto( (prevPhoto) => {
-                let newPhoto;
-                newPhoto = prevPhoto[index];
-                return newPhoto;
+            setProductPhoto( () => {
+                return productPhoto[index];
             });
         });
     }
@@ -90,44 +85,43 @@ function ProductCard(props) {
             })
     }, [])
 
-    console.log(product)
-
     return (
         <div className="container">
             <div className="product-container">
                 <ModalWindow visible={visible} close={close}/>
                 <LogInModal visible={authVisible} close={authClose}/>
                 <div className="left-side">
-                    <div className="product-main-img">
-                        <img src={mainPhoto} alt="product"/>
-                    </div>
-                    <div className="product-img">
-                        {productPhoto.map(function (photo, index){
-                            return(
-                                <div key={index}>
-                                    <img onClick={() => clickPhoto(index)} src={photo}/>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    <ProductPhoto/>
+                    {/*<div className="product-main-img">*/}
+                    {/*    <img src={mainPhoto} alt="product"/>*/}
+                    {/*</div>*/}
+                    {/*<div className="product-img">*/}
+                    {/*    {productPhoto.map(function (photo, index){*/}
+                    {/*        return(*/}
+                    {/*            <div key={index}>*/}
+                    {/*                <img onClick={() => clickPhoto(index)} src={photo}/>*/}
+                    {/*            </div>*/}
+                    {/*        )*/}
+                    {/*    })}*/}
+                    {/*</div>*/}
                     <p>Применим к автомобилям:</p>
                     <DropMenu/>
                 </div>
                 <div className="right-side">
                     <div className="about">
                         <div>
-                            <h2>{data.name}</h2>
+                            <h2>{product.name}</h2>
                             <div className="">
-                                <p>Артикул: <span>{data.code}</span>
+                                <p>Артикул: <span>{product.code}</span>
                                 </p>
-                                <p>Производитель: <span>{data.manufacturer}</span>
+                                <p>Производитель: <span>{product.manufacturer}</span>
                                 </p>
-                                <p>Описание: <span>{data.description}</span>
+                                <p>Описание: <span>{product.description}</span>
                                 </p>
                             </div>
                         </div>
                         <div className="product-price">
-                            <h2>{data.price} тг.</h2>
+                            <h2>{product.price} тг.</h2>
                             <div>
                                 <p>в наличии</p>
                                 <p>г. Астана</p>
@@ -159,33 +153,3 @@ function ProductCard(props) {
 }
 
 export default ProductCard;
-
-
-{/*{product.map((item, index) => {*/}
-{/*    return (*/}
-{/*        <div key={index}>*/}
-{/*            <div>*/}
-{/*                <h2>{item.name}</h2>*/}
-{/*                <div className="">*/}
-{/*                    <p>Артикул: <span>{item.code}</span>*/}
-{/*                    </p>*/}
-{/*                    <p>Производитель: <span>{item.manufactured}</span>*/}
-{/*                    </p>*/}
-{/*                    <p>Описание: <span>{item.description}</span>*/}
-{/*                    </p>*/}
-{/*                </div>*/}
-{/*            </div>*/}
-{/*            <div className="product-price">*/}
-{/*                <h2>{item.price} тг.</h2>*/}
-{/*                <div>*/}
-{/*                    <p>в наличии</p>*/}
-{/*                    <p>г. Астана</p>*/}
-{/*                    <p>г. Алматы</p>*/}
-{/*                </div>*/}
-{/*                <div onClick={open}>*/}
-{/*                    <Button text="Купить" buttonStyle={buttonStyles.normal}/>*/}
-{/*                </div>*/}
-{/*            </div>*/}
-{/*        </div>*/}
-{/*    )*/}
-{/*})}*/}

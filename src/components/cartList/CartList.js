@@ -8,6 +8,7 @@ import Navigate from "../../ui/navigate/Navigate";
 // import { Outlet } from "react-router-dom";
 import {useState} from "react";
 import {Link} from "react-router-dom";
+import data from "bootstrap/js/src/dom/data";
 
 function CartList() {
     const [products, setProducts] = useState([
@@ -56,15 +57,16 @@ function CartList() {
                                                       return newProduct;
                                                   })
                                           }}
-                                          // deleteItem={() => {
-                                          //     setProducts(() => {
-                                          //         let newProducts = [...products];
-                                          //         newProducts[index].item.splice(index, 1)
-                                          //         return newProducts;
-                                          //     })
-                                          // }}
+                                          deleteItem={() => {
+                                              setProducts(() => {
+                                                  console.log(item)
+                                                  let newProducts = [...products];
+                                                  newProducts.splice(index, 1)
+                                                  return newProducts;
+                                              });
+                                          }}
                                 />
-                            )
+                            );
                         })}
                     </div>
                     <hr/>
@@ -88,7 +90,6 @@ function CartList() {
                     </Link>
                 </div>
             </div>
-            {/*<Outlet/>*/}
         </div>
     )
 }
