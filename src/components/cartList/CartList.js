@@ -26,7 +26,7 @@ function CartList() {
             <div>
                 <div className="cart-header">
                     <CartHeader titleText="Оформление заказа"/>
-                    <Navigate/>
+                    <Navigate />
                 </div>
                 <div className="main">
                     <div className="title">Корзина</div>
