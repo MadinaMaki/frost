@@ -24,10 +24,10 @@ function Categories(props) {
         text: "Все поколения", value: 0
     }]);
 
-    let categoryURL = 'http://frost.runtime.kz/categories';
-    let brandsURL = 'http://frost.runtime.kz/brands';
-    let modelsURL = 'http://frost.runtime.kz/models';
-    let generationsURL = 'http://frost.runtime.kz/generations';
+    let categoryURL = 'https://frost.runtime.kz/api/categories';
+    let brandsURL = 'https://frost.runtime.kz/api/brands';
+    let modelsURL = 'https://frost.runtime.kz/api/models';
+    let generationsURL = 'https://frost.runtime.kz/api/generations';
 
     useEffect(() => {
         props.onFilterChange(filterParams);

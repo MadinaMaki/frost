@@ -4,7 +4,6 @@ function Comment(props) {
     return (
         <div>
             {props.data.map((item, index) => {
-                // console.log('----', item)
                 return (
                     <div className="comment-box" key={index}>
                         <div className="user-name">{item.user.firstName}</div>

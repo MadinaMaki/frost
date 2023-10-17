@@ -14,6 +14,7 @@ import {BrowserRouter, Route, Routes, Outlet} from "react-router-dom";
 import CartHeader from "./components/cart_header/CartHeader";
 import Navigate from "./ui/navigate/Navigate";
 import Home from "./pages/home/Home";
+import Test from "./components/Test";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
             <Header/>
             <Outlet/>
             <Footer/>
+            <Test/>
         </div>
     );
 }

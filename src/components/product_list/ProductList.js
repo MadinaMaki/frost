@@ -16,7 +16,7 @@ function ProductList() {
 
     useEffect(() => {
         axios
-            .get('http://frost.runtime.kz/products', {
+            .get('https://frost.runtime.kz/api/products', {
                 params: {
                     page: 1,
                     size: 6,
@@ -51,7 +51,7 @@ function ProductList() {
                 </div>
                 <Switch
                     onPageChange={(page) => {
-                        axios.get('http://frost.runtime.kz/products', {
+                        axios.get('https://frost.runtime.kz/api/products', {
                             params: {
                                 page: page,
                                 size: 6,
