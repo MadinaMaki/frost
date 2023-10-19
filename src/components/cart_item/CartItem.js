@@ -8,18 +8,18 @@ function CartItem(props) {
     return (
         <div>
             <div className="CartItem">
-                <div className="product-name">{props.data.name}</div>
+                <div className="product-name">{props.product_name}</div>
                 <div className="price table-right">
                     <div className="count">
-                        <div onClick={() => props.onMinus()}>–</div>
-                        <div>{props.data.count}</div>
-                        <div onClick={() => props.onPlus()}>+</div>
+                        <div onClick={() => props.decrease()}>–</div>
+                        <div>{props.product_count}</div>
+                        <div onClick={() => props.increase()}>+</div>
                     </div>
-                    <div>{products.count * products.price} тг.</div>
+                    <div>{props.product_count * props.product_price} тг.</div>
                 </div>
             </div>
             <div className="product-info">
-                <span>Артикул: AC97701</span>
+                <span>Артикул: {props.product_code}</span>
                 <div onClick={() => props.deleteItem()}>
                     <Button2 text='Удалить из корзины'/>
                 </div>
