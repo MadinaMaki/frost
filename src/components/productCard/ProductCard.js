@@ -92,18 +92,6 @@ function ProductCard() {
                 <LogInModal visible={authVisible} close={authClose}/>
                 <div className="left-side">
                     <ProductPhoto/>
-                    {/*<div className="product-main-img">*/}
-                    {/*    <img src={mainPhoto} alt="product"/>*/}
-                    {/*</div>*/}
-                    {/*<div className="product-img">*/}
-                    {/*    {productPhoto.map(function (photo, index){*/}
-                    {/*        return(*/}
-                    {/*            <div key={index}>*/}
-                    {/*                <img onClick={() => clickPhoto(index)} src={photo}/>*/}
-                    {/*            </div>*/}
-                    {/*        )*/}
-                    {/*    })}*/}
-                    {/*</div>*/}
                     <p>Применим к автомобилям:</p>
                     <DropMenu/>
                 </div>

@@ -67,46 +67,25 @@ function CartList() {
                                                       console.log('deleted');
                                                       setProducts(() => {
                                                           let newProducts = [...products];
-                                                          newProducts.splice(item.product.id, 1)
+                                                          newProducts.splice(index, 1)
                                                           return newProducts;
                                                       })
                                                   })
                                           }}
                                           increase={() => {
                                               setProducts(() => {
-
+                                                  let newProduct = [...products];
+                                                  newProduct[index].count++;
+                                                  return newProduct;
                                               })
                                           }}
                                           decrease={() => {
-
+                                              let newProduct = [...products];
+                                              if (newProduct[index].count !== 1) {
+                                                  newProduct[index].count--;
+                                              }
+                                              return newProduct;
                                           }}/>
-
-                                // <CartItem key={index} data={item}
-                                //           onPlus={() => {
-                                //                   setProducts(() => {
-                                //                       let newProduct = [...products];
-                                //                       newProduct[index].count++;
-                                //                       return newProduct;
-                                //                   })
-                                //           }}
-                                //           onMinus={() => {
-                                //                   setProducts(() => {
-                                //                       let newProduct = [...products];
-                                //                       if(newProduct[index].count !== 1) {
-                                //                           newProduct[index].count--;
-                                //                       }
-                                //                       return newProduct;
-                                //                   })
-                                //           }}
-                                //           deleteItem={() => {
-                                //               setProducts(() => {
-                                //                   console.log(item)
-                                //                   let newProducts = [...products];
-                                //                   newProducts.splice(index, 1)
-                                //                   return newProducts;
-                                //               });
-                                //           }}
-                                // />
                             );
                         })}
                     </div>
