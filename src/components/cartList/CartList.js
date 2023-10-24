@@ -60,11 +60,10 @@ function CartList() {
                                                       Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzExN2VjOTUwZjExZGQ2NmVhMjUyYmQ2ODE2N2EzNjZjZDJiY2IyMDljODlkODQyN2RjMTcxYWQyYmNmMGI0YjdhODAyZDE0ODE3Zjc2ODUiLCJpYXQiOjE2OTc1NTQ1NjAuMzczNTU0LCJuYmYiOjE2OTc1NTQ1NjAuMzczNTU5LCJleHAiOjE3MjkxNzY5NjAuMzU3MzM2LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.MVN6fc65JCW8mwdPTG1h5CWPdr_L3OeXH-HlrpFVM35aqCkXp275Cmkr-wU8QRv5Oy1SpGZXH6DmyXNwxqEDX5R2LAhzuWe0GF8OMjiOwraNxQRqCQVQ4nfbieYnaZ8-aHH8PeGsKifn3nubxFgg6Y4RdAvA8gLmscGrxeOJJKntlmnsytYHWII9C0NiFnpfwolfAevDTD4vNruI9Zig-_CyyPTYdNzHbgxW5G3A1gpU-u8v44We4F6aTGPLdEjPKBeMiKFlWjDrQ9JctKrHNZDjL-jCekP7Lz5_UJBXbdm7qiQ0lNyBuxdroEUUM5CAmDk6mOwSn36-D-Ka9JoVSxJ3BsOnKOJhJVpxMX54_AE46h0x7wMrTSEWWtn6WbAawqzcmfB0DVTtUxJXiybUhUW6PFFPW_leZyZkvu2HOEhg1o1rAQUc_Mj1DzNwY5LwvljER9XBlIKhRK8aIhUJmqlVEgtwExhnBDi48s9ikdxQPjGE45YDvF-Pi4E4p4DvArO-Xxy6mdkkNR1cpPr_Lqkm5pi9eoNAL0FS2d9R9Efo7oRO3E4OGzjLI0fBvRXHdXLAvRmD2zuKP7FIZpVVVy2A15UgSCyBLDYifjMwzFbclkmbsjYx7cUHuaNYBh0Am8982LKhUgwSyDWfMwQPjgM_2ch2C0pHKjqSJZSdZL4',
                                                   },
                                                   params: {
-                                                      productId: 2,
+                                                      productId: item.product.id,
                                                   }
                                               })
                                                   .then(() => {
-                                                      console.log('deleted');
                                                       setProducts(() => {
                                                           let newProducts = [...products];
                                                           newProducts.splice(index, 1)
@@ -73,18 +72,40 @@ function CartList() {
                                                   })
                                           }}
                                           increase={() => {
-                                              setProducts(() => {
-                                                  let newProduct = [...products];
-                                                  newProduct[index].count++;
-                                                  return newProduct;
+                                              axios.get('https://frost.runtime.kz/api/cart/increase', {
+                                                  headers: {
+                                                      Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzExN2VjOTUwZjExZGQ2NmVhMjUyYmQ2ODE2N2EzNjZjZDJiY2IyMDljODlkODQyN2RjMTcxYWQyYmNmMGI0YjdhODAyZDE0ODE3Zjc2ODUiLCJpYXQiOjE2OTc1NTQ1NjAuMzczNTU0LCJuYmYiOjE2OTc1NTQ1NjAuMzczNTU5LCJleHAiOjE3MjkxNzY5NjAuMzU3MzM2LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.MVN6fc65JCW8mwdPTG1h5CWPdr_L3OeXH-HlrpFVM35aqCkXp275Cmkr-wU8QRv5Oy1SpGZXH6DmyXNwxqEDX5R2LAhzuWe0GF8OMjiOwraNxQRqCQVQ4nfbieYnaZ8-aHH8PeGsKifn3nubxFgg6Y4RdAvA8gLmscGrxeOJJKntlmnsytYHWII9C0NiFnpfwolfAevDTD4vNruI9Zig-_CyyPTYdNzHbgxW5G3A1gpU-u8v44We4F6aTGPLdEjPKBeMiKFlWjDrQ9JctKrHNZDjL-jCekP7Lz5_UJBXbdm7qiQ0lNyBuxdroEUUM5CAmDk6mOwSn36-D-Ka9JoVSxJ3BsOnKOJhJVpxMX54_AE46h0x7wMrTSEWWtn6WbAawqzcmfB0DVTtUxJXiybUhUW6PFFPW_leZyZkvu2HOEhg1o1rAQUc_Mj1DzNwY5LwvljER9XBlIKhRK8aIhUJmqlVEgtwExhnBDi48s9ikdxQPjGE45YDvF-Pi4E4p4DvArO-Xxy6mdkkNR1cpPr_Lqkm5pi9eoNAL0FS2d9R9Efo7oRO3E4OGzjLI0fBvRXHdXLAvRmD2zuKP7FIZpVVVy2A15UgSCyBLDYifjMwzFbclkmbsjYx7cUHuaNYBh0Am8982LKhUgwSyDWfMwQPjgM_2ch2C0pHKjqSJZSdZL4',
+                                                  },
+                                                  params: {
+                                                      productId: item.product.id,
+                                                  }
                                               })
+                                                  .then(() => {
+                                                      setProducts(() => {
+                                                          let newProduct = [...products];
+                                                          newProduct[index].count++;
+                                                          return newProduct;
+                                                      })
+                                                  })
                                           }}
                                           decrease={() => {
-                                              let newProduct = [...products];
-                                              if (newProduct[index].count !== 1) {
-                                                  newProduct[index].count--;
-                                              }
-                                              return newProduct;
+                                              axios.get('https://frost.runtime.kz/api/cart/decrease', {
+                                                  headers: {
+                                                      Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzExN2VjOTUwZjExZGQ2NmVhMjUyYmQ2ODE2N2EzNjZjZDJiY2IyMDljODlkODQyN2RjMTcxYWQyYmNmMGI0YjdhODAyZDE0ODE3Zjc2ODUiLCJpYXQiOjE2OTc1NTQ1NjAuMzczNTU0LCJuYmYiOjE2OTc1NTQ1NjAuMzczNTU5LCJleHAiOjE3MjkxNzY5NjAuMzU3MzM2LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.MVN6fc65JCW8mwdPTG1h5CWPdr_L3OeXH-HlrpFVM35aqCkXp275Cmkr-wU8QRv5Oy1SpGZXH6DmyXNwxqEDX5R2LAhzuWe0GF8OMjiOwraNxQRqCQVQ4nfbieYnaZ8-aHH8PeGsKifn3nubxFgg6Y4RdAvA8gLmscGrxeOJJKntlmnsytYHWII9C0NiFnpfwolfAevDTD4vNruI9Zig-_CyyPTYdNzHbgxW5G3A1gpU-u8v44We4F6aTGPLdEjPKBeMiKFlWjDrQ9JctKrHNZDjL-jCekP7Lz5_UJBXbdm7qiQ0lNyBuxdroEUUM5CAmDk6mOwSn36-D-Ka9JoVSxJ3BsOnKOJhJVpxMX54_AE46h0x7wMrTSEWWtn6WbAawqzcmfB0DVTtUxJXiybUhUW6PFFPW_leZyZkvu2HOEhg1o1rAQUc_Mj1DzNwY5LwvljER9XBlIKhRK8aIhUJmqlVEgtwExhnBDi48s9ikdxQPjGE45YDvF-Pi4E4p4DvArO-Xxy6mdkkNR1cpPr_Lqkm5pi9eoNAL0FS2d9R9Efo7oRO3E4OGzjLI0fBvRXHdXLAvRmD2zuKP7FIZpVVVy2A15UgSCyBLDYifjMwzFbclkmbsjYx7cUHuaNYBh0Am8982LKhUgwSyDWfMwQPjgM_2ch2C0pHKjqSJZSdZL4',
+                                                  },
+                                                  params: {
+                                                      productId: item.product.id,
+                                                  }
+                                              })
+                                                  .then(() => {
+                                                      setProducts(() => {
+                                                          let newProduct = [...products];
+                                                          if (newProduct[index].count !== 1) {
+                                                              newProduct[index].count--;
+                                                          }
+                                                          return newProduct;
+                                                      })
+                                                  })
                                           }}/>
                             );
                         })}

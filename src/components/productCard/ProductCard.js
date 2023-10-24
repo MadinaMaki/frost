@@ -23,7 +23,7 @@ function ProductCard() {
     const [product, setProduct] = useState({
         id: undefined,
         category: undefined,
-        available: undefined,
+        // available: undefined,
         code: undefined,
         manufactured: undefined,
         description: undefined,
@@ -75,7 +75,7 @@ function ProductCard() {
                 setProduct({
                     id: data.id,
                     category:data.category,
-                    available: data.available,
+                    // available: data.available,
                     code: data.code,
                     manufactured: data.manufactured,
                     description: data.description,

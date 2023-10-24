@@ -23,7 +23,7 @@ function ProductList() {
                     brandId: values.brandId,
                     modelId: values.modelId,
                     generationId: values.generationId,
-                    available: values.available
+                    // available: values.available
                 }
             })
             .then((response) => {
@@ -58,7 +58,7 @@ function ProductList() {
                                 brandId: values.brandId,
                                 modelId: values.modelId,
                                 generationId: values.generationId,
-                                available: values.available
+                                // available: values.available
                             }
                         })
                             .then((response) => {
