@@ -85,3 +85,7 @@
     background-color: #F6F6F6;
     border: 1px solid #D3D3D3;
 }
+
+.modal_main .add_btn {
+    align-self: center;
+}
