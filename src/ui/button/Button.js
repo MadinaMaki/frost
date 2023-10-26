@@ -11,8 +11,8 @@ function Button(props) {
     buttonStyle = buttonStyles.primary;
   }
   return (
-    <button className={buttonStyle}>
-      {props.text}
+    <button className={buttonStyle} onClick={props.onClick}>
+      {props.text} {props.onClick}
     </button>
   );
 }

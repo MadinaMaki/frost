@@ -21,7 +21,6 @@ function ModalWindow({product, visible, close, prodID}) {
             }
         })
             .then(()=>{
-                console.log('added')
             })
     }
 

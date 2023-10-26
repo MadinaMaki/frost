@@ -8,6 +8,7 @@ import {useState} from "react";
 import useModal from "../../ui/useModal/useModal";
 import LogInModal from "../../ui/log_in_modal/LogInModal";
 import {Link} from "react-router-dom";
+import Registration from "../../ui/registration_modal/Registration";
 
 function Header() {
     const [loginVisible, loginOpen, loginClose] = useModal();
@@ -16,18 +17,7 @@ function Header() {
     return (
         <div className="header">
             <div>
-                <Modal visible={loginVisible} close={loginClose}>
-                    <h2>Создание учетной записи</h2>
-                    <div className="user_name">
-                        <input placeholder="Имя"/>
-                        <input placeholder="Фамилия"/>
-                    </div>
-                    <input placeholder="Адрес электронной почты"/>
-                    <input placeholder="Пароль" type="password"/>
-                    <input placeholder="Повторите пароль" type="password"/>
-                    <Button text={"Зарегистрироваться"} buttonStyle={buttonStyles.normal}/>
-                    <p>Вход в существующую учётную запись</p>
-                </Modal>
+                <Registration visible={loginVisible} close={loginClose}/>
                 <LogInModal visible={authVisible} close={authClose}/>
             </div>
             <div className="header-inner container">

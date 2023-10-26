@@ -1,8 +1,9 @@
 import Button, {buttonStyles} from "../button/Button";
 import Modal from "../modal/Modal";
+import axios from "axios";
+import {useState} from "react";
 
 function LogInModal({visible, close}) {
-
     return (
         <Modal visible={visible} close={close}>
             <h2>Вход в учетную запись</h2>
