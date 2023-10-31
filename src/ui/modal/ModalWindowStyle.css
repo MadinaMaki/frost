@@ -89,3 +89,9 @@
 .modal_main .add_btn {
     align-self: center;
 }
+
+.modal_main .error {
+    font-size: 12px;
+    color: red;
+    margin-bottom: 5px;
+}
