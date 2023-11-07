@@ -11,6 +11,7 @@ import ProductList from "./components/product_list/ProductList";
 import ProductItem from "./components/product_item/ProductItem";
 import ContactDetails from "./pages/contactDetails/ContactDetails";
 import ProductCard from "./components/productCard/ProductCard";
+import AuthContextProvider, {AuthContext} from "./context/AuthContext";
 
 const router = createBrowserRouter([
     {
@@ -51,5 +52,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router}/>
+    <AuthContextProvider>
+        <RouterProvider router={router}/>
+    </AuthContextProvider>
 );

@@ -4,15 +4,17 @@ import cart from "./assets/cart.png"
 import SearchInput from "../../ui/searchInput/SearchInput";
 import Modal from "../../ui/modal/Modal";
 import Button, {buttonStyles} from "../../ui/button/Button"
-import {useState} from "react";
+import {useContext, useState} from "react";
 import useModal from "../../ui/useModal/useModal";
 import LogInModal from "../../ui/log_in_modal/LogInModal";
 import {Link} from "react-router-dom";
 import Registration from "../../ui/registration_modal/Registration";
+import {AuthContext} from "../../context/AuthContext";
 
 function Header() {
     const [loginVisible, loginOpen, loginClose] = useModal();
     const [authVisible, authOpen, authClose] = useModal();
+    const [user, login, logout] = useContext(AuthContext);
 
     return (
         <div className="header">
@@ -36,8 +38,7 @@ function Header() {
                 </div>
                 <SearchInput/>
                 <div className="auth">
-                    <a onClick={authOpen} href="#">Вход в личный кабинет</a>
-                    <a onClick={loginOpen} href="#">Зарегистрироваться</a>
+                    {user ? <p>{user.firstName} {user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a> & <a onClick={loginOpen} href="#">Зарегистрироваться</a>}
                 </div>
                 <div className="cart">
                     <Link to="/cart">

@@ -44,6 +44,10 @@
     color: #ffffff;
 }
 
+.header .header-inner .auth p {
+    color: #fff;
+}
+
 .header .header-inner .cart {
     position: relative;
     cursor: pointer;
@@ -67,4 +71,3 @@
     color: #ffffff;
     font-weight: 700;
 }
-
