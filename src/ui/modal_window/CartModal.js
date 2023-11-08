@@ -3,7 +3,7 @@ import Modal from "../modal/Modal";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-function ModalWindow({product, visible, close, prodID}) {
+function CartModal({product, visible, close, prodID}) {
     const [count, setCount] = useState(1);
 
     useEffect(() => {
@@ -37,11 +37,11 @@ function ModalWindow({product, visible, close, prodID}) {
                 <div onClick={() => setCount(count + 1)}>+</div>
             </div>
             <div className="add_btn" onClick={productAdd}>
-                <Button text="Добавить в корзину" buttonStyle={buttonStyles.normal}/>
+                <Button text="Добавить в корзину" buttonStyle={buttonStyles.normal} onClick={close}/>
             </div>
             <p>Продолжить выбор товаров</p>
         </Modal>
     );
 }
 
-export default ModalWindow;
+export default CartModal;

@@ -7,7 +7,7 @@ import DropMenu from "../../ui/drop_menu/DropMenu";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import useModal from "../../ui/useModal/useModal";
-import ModalWindow from "../../ui/modal_window/ModalWindow";
+import CartModal from "../../ui/modal_window/CartModal";
 import LogInModal from "../../ui/log_in_modal/LogInModal";
 import {useParams} from "react-router-dom";
 import pic1 from "./assets/5003-01 (1).png";
@@ -88,7 +88,7 @@ function ProductCard() {
     return (
         <div className="container">
             <div className="product-container">
-                <ModalWindow visible={visible} close={close}/>
+                <CartModal visible={visible} close={close}/>
                 <LogInModal visible={authVisible} close={authClose}/>
                 <div className="left-side">
                     <ProductPhoto/>
