@@ -6,10 +6,10 @@ import Availability from "../availability/Availability";
 
 function Categories(props) {
     const [filterParams, setFilterParams] = useState({
-        brandId: undefined, modelId: undefined, generationId: undefined, available: false
+        brandId: undefined, modelId: undefined, generationId: undefined, available: 0
     });
 
-    const [availability, setAvailability] = useState(false);
+    const [availability, setAvailability] = useState(0);
 
     const [categories, setCategories] = useState([{
         text: "Все категории", value: 0

@@ -64,8 +64,8 @@ function Registration({visible, close}) {
             </div>
             <input placeholder="Пароль" type="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
             <input placeholder="Повторите пароль" type="password"/>
-            <Button text={"Зарегистрироваться"} buttonStyle={buttonStyles.normal} onClick={userRegistration}/>
-            <p>Вход в существующую учётную запись</p>
+            <Button text="Зарегистрироваться" buttonStyle={buttonStyles.normal} onClick={userRegistration}/>
+            <a href="#" onClick={close}>Вход в существующую учётную запись</a>
         </Modal>
     )
 }

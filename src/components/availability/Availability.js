@@ -12,7 +12,7 @@ function Availability(props) {
     return(
         <div className="category-item checkbox-type">
             <input type="checkbox" onClick={() => {
-                setValue(!value);
+                setValue(1);
             }}/>
             <p>в наличии</p>
         </div>

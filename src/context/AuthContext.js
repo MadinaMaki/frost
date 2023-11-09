@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState} from "react";
+import {createContext, useEffect, useLayoutEffect, useState} from "react";
 import axios from "axios";
 
 export const AuthContext = createContext();
@@ -8,8 +8,7 @@ const AuthContextProvider = props => {
 
     const [user, setUser] = useState(null);
 
-    useEffect(() => {
-
+    useLayoutEffect(() => {
         if (tokenInfo && new Date(tokenInfo.expiresToken) > new Date()) {
             axios.defaults.headers.common['Authorization'] = `Bearer ${tokenInfo.accessToken}`;
             axios
@@ -17,7 +16,7 @@ const AuthContextProvider = props => {
                 .then(response => {
                     let data = response.data;
                     setUser(data);
-                })
+                });
         }
     }, [tokenInfo]);
 

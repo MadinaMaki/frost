@@ -38,7 +38,9 @@ function LogInModal({visible, close}) {
             <input placeholder="Адрес электронной почты" type="text" value={email} onChange={(event) => setEmail(event.target.value)}/>
             <input placeholder="Пароль" type="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
             <a href="#">Забыли пароль?</a>
-            <Button text={"Войти"} buttonStyle={buttonStyles.normal} onClick={() => login(email, password)}/>
+            <div onClick={close}>
+                <Button text={"Войти"} buttonStyle={buttonStyles.normal} onClick={() => login(email, password)}/>
+            </div>
         </Modal>
     );
 }
