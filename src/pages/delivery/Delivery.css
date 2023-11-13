@@ -1,0 +1,15 @@
+.container .main .form-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .main .form-details .user-info {
+    width: 45%;
+}
+
+.container .main .form-details hr {
+    transform: rotate(90deg);
+    width: 250px;
+    align-self: center;
+    margin: 0;
+}

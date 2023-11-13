@@ -3,6 +3,7 @@ import Button, {buttonStyles} from "../../ui/button/Button";
 import FormData from "../../ui/form/FormData";
 import Navigate from "../../ui/navigate/Navigate";
 import {Link, Outlet} from "react-router-dom";
+import './ContactDetails.css'
 
 function ContactDetails() {
     return (
@@ -21,6 +22,7 @@ function ContactDetails() {
                             <FormData label="Отчeство"/>
                             <FormData label="Телефон"/>
                         </div>
+                        <hr/>
                         <div className="user-info">
                             <FormData label="E-mail"/>
                             <FormData label="Пароль"/>

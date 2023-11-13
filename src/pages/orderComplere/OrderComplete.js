@@ -3,6 +3,7 @@ import complete from './icons/complete.png';
 import './orderComplete.css';
 import CartHeader from "../../components/cart_header/CartHeader";
 import Navigate from "../../ui/navigate/Navigate";
+import {Link} from "react-router-dom";
 
 function OrderComplete() {
     return(
@@ -20,7 +21,9 @@ function OrderComplete() {
                         <br/>
                         ваших заказов в личном кабинете.
                     </p>
-                    <Button2 text="Перейти в личный кабинет"/>
+                    <Link to="/account">
+                        <Button2 text="Перейти в личный кабинет"/>
+                    </Link>
                 </div>
             </div>
         </div>

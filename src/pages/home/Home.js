@@ -5,10 +5,10 @@ import Footer from "../../components/footer/Footer";
 import CartList from "../../components/cartList/CartList";
 import Delivery from "../delivery/Delivery";
 import Comment from "../../components/comment/Comment";
-import Account from "../account/Account";
+import OrdersInfo from "../account/OrdersInfo";
 import ContactDetails from "../contactDetails/ContactDetails";
 import ProductCard from "../../components/productCard/ProductCard";
-import Modal from "../../ui/modal/Modal";
+import Modal from "../../ui/modals/modal/Modal";
 
 function Home() {
     return (

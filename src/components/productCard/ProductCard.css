@@ -67,7 +67,7 @@
     color: #000000;
 }
 
-.container .right-side .product-price div p:first-child:before {
+.container .right-side .product-price div p:first-child::before {
     content: '';
     position: absolute;
     background-image: url("assets/complete.png");

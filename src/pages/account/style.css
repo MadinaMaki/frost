@@ -1,0 +1,81 @@
+.container .user-info-menu {
+    display: flex;
+    width: 100%;
+}
+
+.container .user-info-menu .menu {
+    display: flex;
+    padding: 65px 35px;
+    margin: 0 30px 0 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    width: 30%;
+}
+
+.container .user-info-menu .menu a {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 0 50px;
+}
+
+.container .user-info-menu .menu .active {
+    color: #2156BD;
+}
+
+.container .user-info-menu .menu a:first-child::before {
+    content: '';
+    position: absolute;
+    background-image: url("./assets/Vector.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 27px;
+    left: -45px;
+}
+
+.container .user-info-menu .menu a:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    background-image: url("./assets/Union.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 28px;
+    height: 28px;
+    left: -45px;
+}
+
+.container .user-info-menu .menu a:last-child::before {
+    content: '';
+    position: absolute;
+    background-image: url("./assets/inactive.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 28px;
+    height: 25px;
+    left: -45px;
+}
+
+.container .user-info-menu .main {
+    width: 70%;
+}
+
+.container .user-info-menu .main hr {
+    margin: 0;
+}
+
+.container .user-info-menu .main .table-head {
+    margin: 0 0 20px 0;
+}
+
+.container .user-info-menu .main .table-cell {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .user-info-menu .main .table-cell div {
+    font-size: 16px;
+    margin: 0 25px 0 0;
+}

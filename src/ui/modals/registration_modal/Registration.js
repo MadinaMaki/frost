@@ -1,4 +1,4 @@
-import Button, {buttonStyles} from "../button/Button";
+import Button, {buttonStyles} from "../../button/Button";
 import Modal from "../modal/Modal";
 import {useState} from "react";
 import axios from "axios";

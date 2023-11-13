@@ -2,6 +2,7 @@ import CartHeader from "../../components/cart_header/CartHeader";
 import Button, {buttonStyles} from "../../ui/button/Button";
 import FormData from "../../ui/form/FormData";
 import Navigate from "../../ui/navigate/Navigate";
+import './Delivery.css'
 import {Link} from "react-router-dom";
 
 function Delivery() {
@@ -18,6 +19,7 @@ function Delivery() {
                         <FormData label="Область"/>
                         <FormData label="Город или поселок"/>
                     </div>
+                    <hr/>
                     <div className="user-info">
                         <FormData label="Улица"/>
                         <div className="form-details">

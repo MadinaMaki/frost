@@ -4,22 +4,22 @@ import {useState} from "react";
 
 function Navigate() {
 
-    // const [buttons, setButtons] = useState([
-    //     <Button text="Корзина"/>,
-    //     <Button text="Контактные данные"/>,
-    //     <Button text="Доставка"/>,
-    //     <Button text="Завершение"/>
-    // ]);
-    //
-    // return (
-    //     <div className="cart-nav">
-    //         {buttons.map((button, index) => {
-    //             return (
-    //                 <>{button}</>
-    //             )
-    //         })}
-    //     </div>
-    // )
+    const [buttons, setButtons] = useState([
+        <Button text="Корзина"/>,
+        <Button text="Контактные данные"/>,
+        <Button text="Доставка"/>,
+        <Button text="Завершение"/>
+    ]);
+
+    return (
+        <div className="cart-nav">
+            {buttons.map((button, index) => {
+                return (
+                    <>{button}</>
+                )
+            })}
+        </div>
+    )
 }
 
 export default Navigate;

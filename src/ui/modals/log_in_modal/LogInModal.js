@@ -1,8 +1,8 @@
-import Button, {buttonStyles} from "../button/Button";
+import Button, {buttonStyles} from "../../button/Button";
 import Modal from "../modal/Modal";
 import axios from "axios";
 import {useContext, useState} from "react";
-import {AuthContext} from "../../context/AuthContext";
+import {AuthContext} from "../../../context/AuthContext";
 
 function LogInModal({visible, close}) {
     const [email, setEmail] = useState('');

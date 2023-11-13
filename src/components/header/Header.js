@@ -2,13 +2,13 @@ import "./Header.css"
 import logo from "./assets/Frost logo (2).png"
 import cart from "./assets/cart.png"
 import SearchInput from "../../ui/searchInput/SearchInput";
-import Modal from "../../ui/modal/Modal";
+import Modal from "../../ui/modals/modal/Modal";
 import Button, {buttonStyles} from "../../ui/button/Button"
 import {useContext, useState} from "react";
-import useModal from "../../ui/useModal/useModal";
-import LogInModal from "../../ui/log_in_modal/LogInModal";
+import useModal from "../../ui/modals/useModal/useModal";
+import LogInModal from "../../ui/modals/log_in_modal/LogInModal";
 import {Link} from "react-router-dom";
-import Registration from "../../ui/registration_modal/Registration";
+import Registration from "../../ui/modals/registration_modal/Registration";
 import {AuthContext} from "../../context/AuthContext";
 
 function Header() {

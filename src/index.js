@@ -4,7 +4,7 @@ import './index.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import CartList from "./components/cartList/CartList";
 import Delivery from "./pages/delivery/Delivery";
-import Account from "./pages/account/Account";
+import OrdersInfo from "./pages/account/OrdersInfo";
 import App from "./App"
 import OrderComplete from "./pages/orderComplere/OrderComplete";
 import ProductList from "./components/product_list/ProductList";
@@ -12,6 +12,8 @@ import ProductItem from "./components/product_item/ProductItem";
 import ContactDetails from "./pages/contactDetails/ContactDetails";
 import ProductCard from "./components/productCard/ProductCard";
 import AuthContextProvider, {AuthContext} from "./context/AuthContext";
+import UserContactInfo from "./pages/account/UserContactInfo";
+import Address from "./pages/account/Address";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/account",
-                element: <Account/>
+                element: <OrdersInfo/>
             },
             {
                 path: "/contact",
@@ -45,6 +47,18 @@ const router = createBrowserRouter([
             {
                 path: "/info/:product_id",
                 element: <ProductCard/>
+            },
+            {
+                path: "/contact_details",
+                element: <UserContactInfo/>
+            },
+            {
+                path: "/order_history",
+                element: <OrdersInfo/>
+            },
+            {
+                path: "/address",
+                element: <Address/>
             }
         ]
     }

@@ -3,8 +3,8 @@ import Button, {buttonStyles} from '../../ui/button/Button';
 // import data from "bootstrap/js/src/dom/data";
 import plug from './assets/plug.png';
 import {Link} from "react-router-dom";
-import useModal from "../../ui/useModal/useModal";
-import CartModal from "../../ui/modal_window/CartModal";
+import useModal from "../../ui/modals/useModal/useModal";
+import OrderModal from "../../ui/modals/order_modal/OrderModal";
 import axios from "axios";
 
 function ProductItem(props) {
@@ -12,7 +12,7 @@ function ProductItem(props) {
 
     return (
         <div className="ProductItem col-4">
-            <CartModal visible={visible} close={close} prodID={props.product_id} product={props.product_name}/>
+            <OrderModal visible={visible} close={close} prodID={props.product_id} product={props.product_name}/>
             <div className="item">
                 <img src={plug}/>
                 <Link to={"/info/" + props.product_id}>

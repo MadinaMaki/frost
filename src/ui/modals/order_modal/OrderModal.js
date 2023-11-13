@@ -1,9 +1,9 @@
-import Button, {buttonStyles} from "../button/Button";
+import Button, {buttonStyles} from "../../button/Button";
 import Modal from "../modal/Modal";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-function CartModal({product, visible, close, prodID}) {
+function OrderModal({product, visible, close, prodID}) {
     const [count, setCount] = useState(1);
 
     useEffect(() => {
@@ -41,4 +41,4 @@ function CartModal({product, visible, close, prodID}) {
     );
 }
 
-export default CartModal;
+export default OrderModal;

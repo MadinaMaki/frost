@@ -1,0 +1,11 @@
+.container .main .form-details hr {
+    transform: rotate(90deg);
+    align-self: center;
+    margin: 0;
+}
+
+.container .form-details .user-info {
+    display: flex;
+    flex-direction: column;
+
+}

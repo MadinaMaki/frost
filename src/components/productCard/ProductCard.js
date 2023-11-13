@@ -6,9 +6,9 @@ import Comment from "../comment/Comment";
 import DropMenu from "../../ui/drop_menu/DropMenu";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import useModal from "../../ui/useModal/useModal";
-import CartModal from "../../ui/modal_window/CartModal";
-import LogInModal from "../../ui/log_in_modal/LogInModal";
+import useModal from "../../ui/modals/useModal/useModal";
+import OrderModal from "../../ui/modals/order_modal/OrderModal";
+import LogInModal from "../../ui/modals/log_in_modal/LogInModal";
 import {useParams} from "react-router-dom";
 import pic1 from "./assets/5003-01 (1).png";
 import pic2 from "./assets/5003-02 (1).png";
@@ -88,7 +88,7 @@ function ProductCard() {
     return (
         <div className="container">
             <div className="product-container">
-                <CartModal visible={visible} close={close}/>
+                <OrderModal visible={visible} close={close}/>
                 <LogInModal visible={authVisible} close={authClose}/>
                 <div className="left-side">
                     <ProductPhoto/>
