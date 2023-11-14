@@ -29,8 +29,6 @@ function LogInModal({visible, close}) {
             // })
     // }
 
-    console.log('user:', user)
-
     return (
         <Modal visible={visible} close={close}>
             <h2>Вход в учетную запись</h2>

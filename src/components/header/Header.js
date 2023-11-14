@@ -38,7 +38,11 @@ function Header() {
                 </div>
                 <SearchInput/>
                 <div className="auth">
-                    {user ? <p>{user.firstName} {user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a>}
+                    <Link to="/account">
+                        <div>
+                            {user ? <p>{user.firstName} {user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a>}
+                        </div>
+                    </Link>
                     {user ? <a onClick={logout} href="#">Выйти</a> : <a/>}
                     <a onClick={loginOpen} href="#">Зарегистрироваться</a>
                 </div>

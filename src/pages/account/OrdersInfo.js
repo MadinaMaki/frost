@@ -13,13 +13,13 @@ function OrdersInfo() {
             <div className="user-info-menu">
                 <div className="menu">
                     <Link to="/order_history">
-                        <a href="#" className="active">Мои заказы</a>
+                        <a href="#" className="active icon1">Мои заказы</a>
                     </Link>
                     <Link to="/contact_details">
-                        <a href="#">Контактные данные</a>
+                        <a href="#" className="icon2">Контактные данные</a>
                     </Link>
                     <Link to="/address">
-                        <a href="#">Доставка</a>
+                        <a href="#" className="icon3">Доставка</a>
                     </Link>
                 </div>
                 <div className="main">

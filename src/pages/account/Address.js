@@ -14,13 +14,13 @@ function Address() {
             <div className="user-info-menu">
                 <div className="menu">
                     <Link to="/order_history">
-                        <a href="#">Мои заказы</a>
+                        <a href="#" className="icon1">Мои заказы</a>
                     </Link>
                     <Link to="/contact_details">
-                        <a href="#">Контактные данные</a>
+                        <a href="#" className="icon2">Контактные данные</a>
                     </Link>
                     <Link to="/address">
-                        <a href="#" className="active">Доставка</a>
+                        <a href="#" className="active icon3">Доставка</a>
                     </Link>
                 </div>
                 <div className="main">

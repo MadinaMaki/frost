@@ -18,14 +18,14 @@
     position: relative;
     font-size: 20px;
     font-weight: 600;
-    margin: 0 0 0 50px;
+    margin: 0 0 0 30px;
 }
 
 .container .user-info-menu .menu .active {
     color: #2156BD;
 }
 
-.container .user-info-menu .menu a:first-child::before {
+.container .user-info-menu .menu .icon1::before {
     content: '';
     position: absolute;
     background-image: url("./assets/Vector.svg");
@@ -36,7 +36,7 @@
     left: -45px;
 }
 
-.container .user-info-menu .menu a:nth-child(2)::before {
+.container .user-info-menu .menu .icon2::before {
     content: '';
     position: absolute;
     background-image: url("./assets/Union.svg");
@@ -47,7 +47,7 @@
     left: -45px;
 }
 
-.container .user-info-menu .menu a:last-child::before {
+.container .user-info-menu .menu .icon3::before {
     content: '';
     position: absolute;
     background-image: url("./assets/inactive.png");
