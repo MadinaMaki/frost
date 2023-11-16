@@ -14,6 +14,8 @@ import ProductCard from "./components/productCard/ProductCard";
 import AuthContextProvider, {AuthContext} from "./context/AuthContext";
 import UserContactInfo from "./pages/account/UserContactInfo";
 import Address from "./pages/account/Address";
+import {store} from "./store";
+import {ReduxProvider} from "react-redux";
 
 const router = createBrowserRouter([
     {
@@ -66,7 +68,11 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <AuthContextProvider>
+    // <AuthContextProvider>
+    //     <RouterProvider router={router}/>
+    // </AuthContextProvider>
+
+    <ReduxProvider store={store}>
         <RouterProvider router={router}/>
-    </AuthContextProvider>
+    </ReduxProvider>
 );

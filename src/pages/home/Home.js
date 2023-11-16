@@ -9,11 +9,15 @@ import OrdersInfo from "../account/OrdersInfo";
 import ContactDetails from "../contactDetails/ContactDetails";
 import ProductCard from "../../components/productCard/ProductCard";
 import Modal from "../../ui/modals/modal/Modal";
+import {Outlet} from "react-router-dom";
 
 function Home() {
     return (
-        <div>
-        </div>
+        <>
+            <Header/>
+            <Outlet/>
+            <Footer/>
+        </>
     )
 }
 
