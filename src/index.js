@@ -15,7 +15,10 @@ import AuthContextProvider, {AuthContext} from "./context/AuthContext";
 import UserContactInfo from "./pages/account/UserContactInfo";
 import Address from "./pages/account/Address";
 import {store} from "./store";
-import {ReduxProvider} from "react-redux";
+import { Provider as ReduxProvider } from "react-redux";
+import axios from "axios";
+
+axios.defaults.baseURL = 'https://frost.runtime.kz/api';
 
 const router = createBrowserRouter([
     {

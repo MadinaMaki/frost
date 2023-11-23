@@ -3,14 +3,17 @@ import Modal from "../modal/Modal";
 import axios from "axios";
 import {useContext, useState} from "react";
 import {AuthContext} from "../../../context/AuthContext";
+import {useDispatch} from "react-redux";
+import {signIn} from "../../../features/auth/authSlice";
 
 function LogInModal({visible, close}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const [errors, setErrors] = useState('')
+    const dispatch = useDispatch();
 
-    const [user, login, logout] = useContext(AuthContext);
+    // const [user, login, logout] = useContext(AuthContext);
 
     // function logIn() {
     //     axios.post('https://frost.runtime.kz/api/auth/token', {
@@ -37,7 +40,7 @@ function LogInModal({visible, close}) {
             <input placeholder="Пароль" type="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
             <a href="#">Забыли пароль?</a>
             <div onClick={close}>
-                <Button text={"Войти"} buttonStyle={buttonStyles.normal} onClick={() => login(email, password)}/>
+                <Button text={"Войти"} buttonStyle={buttonStyles.normal} onClick={() => {dispatch(signIn(email, password))}}/>
             </div>
         </Modal>
     );

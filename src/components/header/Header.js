@@ -10,16 +10,18 @@ import LogInModal from "../../ui/modals/log_in_modal/LogInModal";
 import {Link} from "react-router-dom";
 import Registration from "../../ui/modals/registration_modal/Registration";
 import {AuthContext} from "../../context/AuthContext";
+import {useDispatch} from "react-redux";
 
 function Header() {
     const [loginVisible, loginOpen, loginClose] = useModal();
     const [authVisible, authOpen, authClose] = useModal();
-    const [user, login, logout] = useContext(AuthContext);
+    // const [user, login, logout] = useContext(AuthContext);
+    const dispatch = useDispatch();
 
     return (
         <div className="header">
             <div>
-                <Registration visible={loginVisible} close={loginClose}/>
+                {/*<Registration visible={loginVisible} close={loginClose}/>*/}
                 <LogInModal visible={authVisible} close={authClose}/>
             </div>
             <div className="header-inner container">
@@ -37,15 +39,16 @@ function Header() {
                     </p>
                 </div>
                 <SearchInput/>
-                <div className="auth">
-                    <Link to="/account">
-                        <div>
-                            {user ? <p>{user.firstName} {user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a>}
-                        </div>
-                    </Link>
-                    {user ? <a onClick={logout} href="#">Выйти</a> : <a/>}
-                    <a onClick={loginOpen} href="#">Зарегистрироваться</a>
-                </div>
+                <a onClick={authOpen} href="#">Вход в личный кабинет</a>
+                {/*<div className="auth">*/}
+                {/*    <Link to="/account">*/}
+                {/*        <div>*/}
+                {/*            {user ? <p>{user.firstName} {user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a>}*/}
+                {/*        </div>*/}
+                {/*    </Link>*/}
+                {/*    {user ? <a onClick={logout} href="#">Выйти</a> : <a/>}*/}
+                {/*    <a onClick={loginOpen} href="#">Зарегистрироваться</a>*/}
+                {/*</div>*/}
                 <div className="cart">
                     <Link to="/cart">
                         <img className="cart-icon" src={cart} alt="cart"/>
