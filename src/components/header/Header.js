@@ -10,20 +10,22 @@ import LogInModal from "../../ui/modals/log_in_modal/LogInModal";
 import {Link} from "react-router-dom";
 import Registration from "../../ui/modals/registration_modal/Registration";
 import {AuthContext} from "../../context/AuthContext";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {setUser} from "../../features/auth/authSlice";
 
 function Header() {
     const [loginVisible, loginOpen, loginClose] = useModal();
     const [authVisible, authOpen, authClose] = useModal();
     // const [user, login, logout] = useContext(AuthContext);
-    const dispatch = useDispatch();
+    const authState = useSelector(state => state.auth);
 
     return (
         <div className="header">
             <div>
-                {/*<Registration visible={loginVisible} close={loginClose}/>*/}
+                <Registration visible={loginVisible} close={loginClose}/>
                 <LogInModal visible={authVisible} close={authClose}/>
             </div>
+
             <div className="header-inner container">
                 <Link to="/">
                     <img className="header-logo" src={logo}/>
@@ -39,16 +41,17 @@ function Header() {
                     </p>
                 </div>
                 <SearchInput/>
-                <a onClick={authOpen} href="#">Вход в личный кабинет</a>
-                {/*<div className="auth">*/}
-                {/*    <Link to="/account">*/}
-                {/*        <div>*/}
-                {/*            {user ? <p>{user.firstName} {user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a>}*/}
-                {/*        </div>*/}
-                {/*    </Link>*/}
-                {/*    {user ? <a onClick={logout} href="#">Выйти</a> : <a/>}*/}
-                {/*    <a onClick={loginOpen} href="#">Зарегистрироваться</a>*/}
-                {/*</div>*/}
+                <div className="auth">
+                    <Link to="/account">
+                        <div>
+                            {authState.user ? <p>{authState.user.firstName} {authState.user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a>}
+                        </div>
+                    </Link>
+                    {authState.user ? <a
+                        // onClick={logout}
+                        href="#">Выйти</a> : <a/>}
+                    <a onClick={loginOpen} href="#">Зарегистрироваться</a>
+                </div>
                 <div className="cart">
                     <Link to="/cart">
                         <img className="cart-icon" src={cart} alt="cart"/>

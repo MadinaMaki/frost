@@ -1,10 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {getAccessToken} from "./authAPI";
+import {getAccessToken, getUserInfo} from "./authAPI";
 import axios from "axios";
+import logInModal from "../../ui/modals/log_in_modal/LogInModal";
 
 const initialState = {
     loading: false, // идет ли загрузка данных пользователя или получение токена
-    tokenInfo: null, // информация о токене и времени его жизни
+    tokenInfo: JSON.parse(localStorage.getItem('tokenInfo')), // информация о токене и времени его жизни
     user: null, // информация о пользователе соответсвующая токену доступа
 }
 
@@ -19,7 +20,7 @@ const authSlice = createSlice({
             state.tokenInfo = action.payload;
         },
         setUser: (state, action) => {
-            // обновить состояние пользовательской информации, соотвествующей токену
+            state.user = action.payload;
         }
     }
 })
@@ -30,7 +31,11 @@ export const checkTokenAndGetUser = () => (dispatch, getState) => {
         dispatch(setLoading(true));
     }
     if (state.auth.tokenInfo && state.auth.tokenInfo.expiresIn > new Date().getTime()) {
-        axios.defaults.headers.common['Authorization'] = `Bearer${state.auth.tokenInfo.accessToken}`
+        axios.defaults.headers.common['Authorization'] = `Bearer ${state.auth.tokenInfo.accessToken}`;
+        getUserInfo()
+            .then(user => {
+                dispatch(setUser(user));
+            });
     }
     dispatch(setLoading(false));
 };
@@ -41,15 +46,14 @@ export const signIn = (username, password) => dispatch => {
         .then(tokenInfo => {
             dispatch(setTokenInfo(tokenInfo))
             localStorage.setItem('tokenInfo', JSON.stringify(tokenInfo));
-            dispatch(checkTokenAndGetUser())
+            dispatch(checkTokenAndGetUser());
         });
 };
 
 export const signOut = () => dispatch => {
-    // TODO
+    localStorage.removeItem('tokenInfo');
+    setUser(null);
 };
-
-export
 
 export const {setLoading, setTokenInfo, setUser} = authSlice.actions
 export default authSlice.reducer;

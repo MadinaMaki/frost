@@ -14,8 +14,6 @@ function ProductList() {
 
     const [values, setValues] = useState({});
 
-    console.log(values)
-
     useEffect(() => {
         axios
             .get('https://frost.runtime.kz/api/products', {
