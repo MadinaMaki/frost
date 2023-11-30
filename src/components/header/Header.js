@@ -11,13 +11,14 @@ import {Link} from "react-router-dom";
 import Registration from "../../ui/modals/registration_modal/Registration";
 import {AuthContext} from "../../context/AuthContext";
 import {useDispatch, useSelector} from "react-redux";
-import {setUser} from "../../features/auth/authSlice";
+import {setUser, signOut} from "../../features/auth/authSlice";
 
 function Header() {
     const [loginVisible, loginOpen, loginClose] = useModal();
     const [authVisible, authOpen, authClose] = useModal();
     // const [user, login, logout] = useContext(AuthContext);
     const authState = useSelector(state => state.auth);
+    const dispatch = useDispatch();
 
     return (
         <div className="header">
@@ -25,7 +26,6 @@ function Header() {
                 <Registration visible={loginVisible} close={loginClose}/>
                 <LogInModal visible={authVisible} close={authClose}/>
             </div>
-
             <div className="header-inner container">
                 <Link to="/">
                     <img className="header-logo" src={logo}/>
@@ -44,13 +44,11 @@ function Header() {
                 <div className="auth">
                     <Link to="/account">
                         <div>
-                            {authState.user ? <p>{authState.user.firstName} {authState.user.lastName}</p> : <a onClick={authOpen} href="#">Вход в личный кабинет</a>}
+                            {authState.user ? <p>{authState.user.firstName} {authState.user.lastName}</p> : <p onClick={authOpen}>Вход в личный кабинет</p>}
                         </div>
                     </Link>
-                    {authState.user ? <a
-                        // onClick={logout}
-                        href="#">Выйти</a> : <a/>}
-                    <a onClick={loginOpen} href="#">Зарегистрироваться</a>
+                    {authState.user ? <p onClick={() => dispatch(signOut())}>Выйти</p> : <p/>}
+                    <p onClick={loginOpen} href="#">Зарегистрироваться</p>
                 </div>
                 <div className="cart">
                     <Link to="/cart">

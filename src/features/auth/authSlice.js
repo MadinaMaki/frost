@@ -52,7 +52,8 @@ export const signIn = (username, password) => dispatch => {
 
 export const signOut = () => dispatch => {
     localStorage.removeItem('tokenInfo');
-    setUser(null);
+    dispatch(setUser(null));
+    dispatch(setTokenInfo(null));
 };
 
 export const {setLoading, setTokenInfo, setUser} = authSlice.actions
