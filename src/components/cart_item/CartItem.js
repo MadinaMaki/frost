@@ -1,9 +1,14 @@
 import Button2 from "../../ui/button2/Button2";
 import './CartItem.css';
 import {useState} from "react";
+import {increase} from "../../features/auth/cartAPI";
+import {useDispatch} from "react-redux";
 
 function CartItem(props) {
+    const dispatch = useDispatch;
     const [products, setProducts] = useState(props.data);
+
+    console.log('aaaaaa', products)
 
     return (
         <div>
@@ -11,7 +16,13 @@ function CartItem(props) {
                 <div className="product-name">{props.product_name}</div>
                 <div className="price table-right">
                     <div className="count">
-                        <div onClick={() => props.decrease()}>–</div>
+                        <div onClick={() => {
+                            increase(products.product.id)
+                                .then(() => {
+                                    dispatch(setIncrease());
+                                });
+                        }}>–
+                        </div>
                         <div>{props.product_count}</div>
                         <div onClick={() => props.increase()}>+</div>
                     </div>

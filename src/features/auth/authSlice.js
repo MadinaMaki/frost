@@ -1,13 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {getAccessToken, getUserInfo} from "./authAPI";
 import axios from "axios";
-import logInModal from "../../ui/modals/log_in_modal/LogInModal";
 
 const initialState = {
     loading: false, // идет ли загрузка данных пользователя или получение токена
     tokenInfo: JSON.parse(localStorage.getItem('tokenInfo')), // информация о токене и времени его жизни
     user: null, // информация о пользователе соответсвующая токену доступа
-}
+};
 
 const authSlice = createSlice({
     name: 'auth',
@@ -23,7 +22,7 @@ const authSlice = createSlice({
             state.user = action.payload;
         }
     }
-})
+});
 
 export const checkTokenAndGetUser = () => (dispatch, getState) => {
     const state = getState();
@@ -56,5 +55,5 @@ export const signOut = () => dispatch => {
     dispatch(setTokenInfo(null));
 };
 
-export const {setLoading, setTokenInfo, setUser} = authSlice.actions
+export const {setLoading, setTokenInfo, setUser} = authSlice.actions;
 export default authSlice.reducer;

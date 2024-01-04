@@ -13,6 +13,7 @@ function LogInModal({visible, close}) {
     const [errors, setErrors] = useState('')
     const dispatch = useDispatch();
     const authState = useSelector(state => state.auth)
+
     // function logIn() {
     //     axios.post('https://frost.runtime.kz/api/auth/token', {
     //         username: email,
@@ -30,8 +31,6 @@ function LogInModal({visible, close}) {
     // })
     // }
 
-    console.log(authState)
-
     useEffect(() => {
         if(authState.user)
         {return close}
@@ -39,7 +38,8 @@ function LogInModal({visible, close}) {
 
     return (
         <Modal visible={visible} close={close}>
-            {!authState.loading ?
+            {authState.loading ?
+                 <span className="loader"></span> :
                 <>
                     <h2>Вход в учетную запись</h2>
                     <span className="error">{errors}</span>
@@ -53,10 +53,7 @@ function LogInModal({visible, close}) {
                             dispatch(signIn(email, password))
                         }}/>
                     </div>
-                </> :
-                <div>
-                    <span className="loader"></span>
-                </div>
+                </>
             }
         </Modal>
     );

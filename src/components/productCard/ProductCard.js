@@ -38,14 +38,6 @@ function ProductCard() {
     let reviewURL = 'http://frost.runtime.kz/reviews';
     let productsURL = 'http://frost.runtime.kz/products';
 
-    // function clickPhoto(index) {
-    //     setMainPhoto(function (){
-    //         setProductPhoto( () => {
-    //             return productPhoto[index];
-    //         });
-    //     });
-    // }
-
     useEffect(() => {
         axios
             .get(reviewURL, {
