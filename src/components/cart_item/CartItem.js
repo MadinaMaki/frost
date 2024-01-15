@@ -1,7 +1,7 @@
 import Button2 from "../../ui/button2/Button2";
 import './CartItem.css';
 import {useState} from "react";
-import {increase} from "../../features/auth/cartAPI";
+import {increase} from "../../features/cart/cartAPI";
 import {useDispatch} from "react-redux";
 
 function CartItem(props) {

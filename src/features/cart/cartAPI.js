@@ -8,4 +8,3 @@ export const increase = async (productId) => {
     });
     return response.data;
 }
-

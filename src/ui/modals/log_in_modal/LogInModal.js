@@ -12,7 +12,7 @@ function LogInModal({visible, close}) {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState('')
     const dispatch = useDispatch();
-    const authState = useSelector(state => state.auth)
+    const authState = useSelector(state => state.auth);
 
     // function logIn() {
     //     axios.post('https://frost.runtime.kz/api/auth/token', {
