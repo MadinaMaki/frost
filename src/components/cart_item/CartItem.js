@@ -3,6 +3,7 @@ import './CartItem.css';
 import {useState} from "react";
 import {increase} from "../../features/cart/cartAPI";
 import {useDispatch} from "react-redux";
+import {setIncrease} from "../../features/cart/cartSlice";
 
 function CartItem(props) {
     const dispatch = useDispatch;
@@ -19,7 +20,7 @@ function CartItem(props) {
                         <div onClick={() => {
                             increase(products.product.id)
                                 .then(() => {
-                                    dispatch(setIncrease());
+                                    dispatch(setIncrease(products.product.id));
                                 });
                         }}>–
                         </div>

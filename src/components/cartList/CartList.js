@@ -9,22 +9,30 @@ import Navigate from "../../ui/navigate/Navigate";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import {loadCartItems} from "../../features/cart/cartSlice";
+import {useDispatch, useSelector} from "react-redux";
 
 function CartList() {
+
     const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
+
+    const cartItems = useSelector(state => state.cart);
+    console.log(cartItems);
 
     let total = 0;
-    for (let i of products) {
-        total += i.count * i.product.price
-    }
+    // for (let i of products) {
+    //     total += i.count * i.product.price
+    // }
 
     useEffect(() => {
-        console.log('cart effect');
-        axios.get('https://frost.runtime.kz/api/cart')
-            .then((response) => {
-                let data = response.data;
-                setProducts(data.items);
-            })
+        // console.log('cart effect');
+        // axios.get('https://frost.runtime.kz/api/cart')
+        //     .then((response) => {
+        //         let data = response.data;
+        //         setProducts(data.items);
+        //     })
+        dispatch(loadCartItems());
     }, []);
 
     return (
