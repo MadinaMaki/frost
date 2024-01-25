@@ -14,23 +14,6 @@ function LogInModal({visible, close}) {
     const dispatch = useDispatch();
     const authState = useSelector(state => state.auth);
 
-    // function logIn() {
-    //     axios.post('https://frost.runtime.kz/api/auth/token', {
-    //         username: email,
-    //         password: password,
-    //     })
-    //         .then(() => {
-    //             setErrors('');
-    //         })
-    // .catch(error => {
-    //     let response = error.response;
-    //     console.log(response.data)
-    //     if (response.status === 400) {
-    //         setErrors(response.data.message)
-    //     }
-    // })
-    // }
-
     useEffect(() => {
         if(authState.user)
         {return close}

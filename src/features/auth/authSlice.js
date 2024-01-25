@@ -25,6 +25,8 @@ const authSlice = createSlice({
 });
 
 export const checkTokenAndGetUser = () => (dispatch, getState) => {
+    // axios.defaults.headers.common['Authorization'] = `Bearer ${state.auth.tokenInfo.accessToken}`;
+
     const state = getState();
     if(!state.auth.loading) {
         dispatch(setLoading(true));
