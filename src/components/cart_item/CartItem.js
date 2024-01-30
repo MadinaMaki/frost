@@ -2,7 +2,7 @@ import Button2 from "../../ui/button2/Button2";
 import './CartItem.css';
 import {useState} from "react";
 import {increase} from "../../features/cart/cartAPI";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {setIncrease} from "../../features/cart/cartSlice";
 
 function CartItem(props) {
