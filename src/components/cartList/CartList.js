@@ -20,21 +20,12 @@ function CartList() {
     const cartItems = useSelector(state => state.cart);
     console.log(cartItems);
 
-    let globalState = useSelector(state => state)
-    console.log('---state', globalState)
-
     let total = 0;
     for (let i of products) {
         total += i.count * i.product.price
     }
 
     useEffect(() => {
-        // console.log('cart effect');
-        // axios.get('https://frost.runtime.kz/api/cart')
-        //     .then((response) => {
-        //         let data = response.data;
-        //         setProducts(data.items);
-        //     })
         dispatch(loadCartItems());
     }, []);
 
@@ -58,7 +49,7 @@ function CartList() {
                         </div>
                         {}
                         <div>
-                            {products.map((item, index) => {
+                            {cartItems.items.map((item, index) => {
                                 return (
                                     <CartItem key={index} data={item}
                                               product_name={item.product.name} product_count={item.count}

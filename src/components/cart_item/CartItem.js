@@ -9,8 +9,6 @@ function CartItem(props) {
     const dispatch = useDispatch;
     const [products, setProducts] = useState(props.data);
 
-    console.log('aaaaaa', products)
-
     return (
         <div>
             <div className="CartItem">
