@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getCartItems} from "./cartAPI";
+import {getCartItems, getIncrease} from "./cartAPI";
 import cartItem from "../../components/cart_item/CartItem";
 
 const initialState = {
@@ -14,14 +14,24 @@ const cartSlice = createSlice({
             state.items = action.payload;
         },
         setIncrease: (state, action) => {
+            // action.payload -> product id
+            // items -> [
+            //   { id, count },
+            //   { id, count },
+            //   { id, count },
+            // ]
 
+            state.items = action.payload;
         }
     }
 });
 
-// export const increase = () => (dispatch) => {
-//
-// }
+export const increase = () => (dispatch) => {
+    getIncrease()
+        .then((cartItems) => {
+            dispatch(setIncrease(cartItems.items))
+        } )
+}
 
 export const loadCartItems = () => (dispatch) => {
     getCartItems()

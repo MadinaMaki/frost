@@ -5,8 +5,8 @@ export const getCartItems = async () => {
     return response.data;
 }
 
-export const increase = async (productId) => {
-    let response = await axios.get('/cart/cart/increase', {
+export const getIncrease = async (productId) => {
+    let response = await axios.get('https://frost.runtime.kz/api/cart/increase', {
         params: {
             productId: productId,
         }

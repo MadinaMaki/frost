@@ -9,8 +9,9 @@ import Navigate from "../../ui/navigate/Navigate";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import {loadCartItems} from "../../features/cart/cartSlice";
+import {loadCartItems, setIncrease} from "../../features/cart/cartSlice";
 import {useDispatch, useSelector} from "react-redux";
+import {getIncrease} from "../../features/cart/cartAPI";
 
 function CartList() {
 
@@ -68,36 +69,28 @@ function CartList() {
                                                           })
                                                       })
                                               }}
-                                        // increase={() => {
-                                        //     axios.get('https://frost.runtime.kz/api/cart/increase', {
-                                        //         params: {
-                                        //             productId: item.product.id,
-                                        //         }
-                                        //     })
-                                        //         .then(() => {
-                                        //             setProducts(() => {
-                                        //                 let newProduct = [...products];
-                                        //                 newProduct[index].count++;
-                                        //                 return newProduct;
-                                        //             })
-                                        //         })
-                                        // }}
-                                        //       decrease={() => {
-                                        //           axios.get('https://frost.runtime.kz/api/cart/decrease', {
-                                        //               params: {
-                                        //                   productId: item.product.id,
-                                        //               }
-                                        //           })
-                                        //               .then(() => {
-                                        //                   setProducts(() => {
-                                        //                       let newProduct = [...products];
-                                        //                       if (newProduct[index].count !== 1) {
-                                        //                           newProduct[index].count--;
-                                        //                       }
-                                        //                       return newProduct;
-                                        //                   })
-                                        //               })
-                                        //       }}
+                                              increase={() => {
+                                                  getIncrease()
+                                                      .then(() => {
+                                                          setIncrease()
+                                                      })
+                                              }}
+                                              decrease={() => {
+                                                  axios.get('https://frost.runtime.kz/api/cart/decrease', {
+                                                      params: {
+                                                          productId: item.product.id,
+                                                      }
+                                                  })
+                                                      .then(() => {
+                                                          setProducts(() => {
+                                                              let newProduct = [...products];
+                                                              if (newProduct[index].count !== 1) {
+                                                                  newProduct[index].count--;
+                                                              }
+                                                              return newProduct;
+                                                          })
+                                                      })
+                                              }}
                                     />
                                 );
                             })}
