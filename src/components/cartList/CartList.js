@@ -18,11 +18,11 @@ function CartList() {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
 
-    const cartItems = useSelector(state => state.cart);
+    const cartItems = useSelector(state => state.cart.items);
     console.log(cartItems);
 
     let total = 0;
-    for (let i of products) {
+    for (let i of cartItems) {
         total += i.count * i.product.price
     }
 
@@ -50,47 +50,41 @@ function CartList() {
                         </div>
                         {}
                         <div>
-                            {cartItems.items.map((item, index) => {
+                            {cartItems.map((item, index) => {
                                 return (
                                     <CartItem key={index} data={item}
                                               product_name={item.product.name} product_count={item.count}
                                               product_price={item.product.price} product_code={item.product.code}
-                                              deleteItem={() => {
-                                                  axios.get('https://frost.runtime.kz/api/cart/delete', {
-                                                      params: {
-                                                          productId: item.product.id,
-                                                      }
-                                                  })
-                                                      .then(() => {
-                                                          setProducts(() => {
-                                                              let newProducts = [...products];
-                                                              newProducts.splice(index, 1)
-                                                              return newProducts;
-                                                          })
-                                                      })
-                                              }}
-                                              increase={() => {
-                                                  getIncrease()
-                                                      .then(() => {
-                                                          setIncrease()
-                                                      })
-                                              }}
-                                              decrease={() => {
-                                                  axios.get('https://frost.runtime.kz/api/cart/decrease', {
-                                                      params: {
-                                                          productId: item.product.id,
-                                                      }
-                                                  })
-                                                      .then(() => {
-                                                          setProducts(() => {
-                                                              let newProduct = [...products];
-                                                              if (newProduct[index].count !== 1) {
-                                                                  newProduct[index].count--;
-                                                              }
-                                                              return newProduct;
-                                                          })
-                                                      })
-                                              }}
+                                              // deleteItem={() => {
+                                              //     // axios.get('https://frost.runtime.kz/api/cart/delete', {
+                                              //     //     params: {
+                                              //     //         productId: item.product.id,
+                                              //     //     }
+                                              //     // })
+                                              //     //     .then(() => {
+                                              //     //         setProducts(() => {
+                                              //     //             let newProducts = [...products];
+                                              //     //             newProducts.splice(index, 1)
+                                              //     //             return newProducts;
+                                              //     //         })
+                                              //     //     })
+                                              // }}
+                                              // decrease={() => {
+                                              //     // axios.get('https://frost.runtime.kz/api/cart/decrease', {
+                                              //     //     params: {
+                                              //     //         productId: item.product.id,
+                                              //     //     }
+                                              //     // })
+                                              //     //     .then(() => {
+                                              //     //         setProducts(() => {
+                                              //     //             let newProduct = [...products];
+                                              //     //             if (newProduct[index].count !== 1) {
+                                              //     //                 newProduct[index].count--;
+                                              //     //             }
+                                              //     //             return newProduct;
+                                              //     //         })
+                                              //     //     })
+                                              // }}
                                     />
                                 );
                             })}

@@ -4,7 +4,6 @@ import {useState} from "react";
 import {getIncrease} from "../../features/cart/cartAPI";
 import {useDispatch} from "react-redux";
 import {setIncrease} from "../../features/cart/cartSlice";
-import {increase} from "../../features/cart/cartSlice";
 
 function CartItem(props) {
     const dispatch = useDispatch();

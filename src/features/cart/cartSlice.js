@@ -20,18 +20,14 @@ const cartSlice = createSlice({
             //   { id, count },
             //   { id, count },
             // ]
-
-            state.items = action.payload;
+            for (let i = 0; i < state.items.length; i++) {
+                if (state.items[i].product.id === action.payload) {
+                    state.items[i].count++;
+                }
+            }
         }
     }
 });
-
-export const increase = () => (dispatch) => {
-    getIncrease()
-        .then((cartItems) => {
-            dispatch(setIncrease(cartItems.items))
-        } )
-}
 
 export const loadCartItems = () => (dispatch) => {
     getCartItems()
