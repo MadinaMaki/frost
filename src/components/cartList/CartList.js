@@ -19,7 +19,6 @@ function CartList() {
     const dispatch = useDispatch();
 
     const cartItems = useSelector(state => state.cart.items);
-    console.log(cartItems);
 
     let total = 0;
     for (let i of cartItems) {
@@ -55,36 +54,6 @@ function CartList() {
                                     <CartItem key={index} data={item}
                                               product_name={item.product.name} product_count={item.count}
                                               product_price={item.product.price} product_code={item.product.code}
-                                              // deleteItem={() => {
-                                              //     // axios.get('https://frost.runtime.kz/api/cart/delete', {
-                                              //     //     params: {
-                                              //     //         productId: item.product.id,
-                                              //     //     }
-                                              //     // })
-                                              //     //     .then(() => {
-                                              //     //         setProducts(() => {
-                                              //     //             let newProducts = [...products];
-                                              //     //             newProducts.splice(index, 1)
-                                              //     //             return newProducts;
-                                              //     //         })
-                                              //     //     })
-                                              // }}
-                                              // decrease={() => {
-                                              //     // axios.get('https://frost.runtime.kz/api/cart/decrease', {
-                                              //     //     params: {
-                                              //     //         productId: item.product.id,
-                                              //     //     }
-                                              //     // })
-                                              //     //     .then(() => {
-                                              //     //         setProducts(() => {
-                                              //     //             let newProduct = [...products];
-                                              //     //             if (newProduct[index].count !== 1) {
-                                              //     //                 newProduct[index].count--;
-                                              //     //             }
-                                              //     //             return newProduct;
-                                              //     //         })
-                                              //     //     })
-                                              // }}
                                     />
                                 );
                             })}

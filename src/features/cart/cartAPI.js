@@ -13,3 +13,21 @@ export const getIncrease = async (productId) => {
     });
     return response.data;
 }
+
+export const getDecrease = async (productId) => {
+    let response = await axios.get('https://frost.runtime.kz/api/cart/decrease',{
+        params: {
+            productId: productId
+        }
+    });
+    return response.data;
+}
+
+export const deleteItem = async (productId) => {
+    let response = await axios.get('https://frost.runtime.kz/api/cart/delete',{
+        params: {
+            productId: productId
+        }
+    });
+    return response.data;
+}

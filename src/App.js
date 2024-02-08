@@ -13,17 +13,17 @@ function App() {
     }, [dispatch])
 
     const auth = useSelector(state => state.auth);
-    if (!auth.user) {
-        return (
-            <div>User is not authorized</div>
-        );
-    } else {
+    // if (!auth.user) {
+    //     return (
+    //         <div>User is not authorized</div>
+    //     );
+    // } else {
         return (
             <div className="App">
                 <Home/>
             </div>
         );
-    }
+    // }
 }
 
 export default App;
