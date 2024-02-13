@@ -35,7 +35,14 @@ export const checkTokenAndGetUser = () => (dispatch, getState) => {
         getUserInfo()
             .then(user => {
                 dispatch(setUser(user));
-            });
+                dispatch(setLoading(false));
+            })
+            .catch(() => {
+                dispatch(setLoading(false));
+            })
+    }
+    else {
+        dispatch(setLoading(false));
     }
     dispatch(setLoading(false));
 };

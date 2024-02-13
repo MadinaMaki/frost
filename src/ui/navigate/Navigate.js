@@ -15,7 +15,7 @@ function Navigate() {
         <div className="cart-nav">
             {buttons.map((button, index) => {
                 return (
-                    <>{button}</>
+                    <div key={index}>{button}</div>
                 )
             })}
         </div>

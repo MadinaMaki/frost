@@ -1,9 +1,11 @@
 import './App.css';
-import Home from "./pages/home/Home";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {checkTokenAndGetUser} from "./features/auth/authSlice";
 import {useSelector} from "react-redux";
+import Header from "./components/header/Header";
+import {Outlet} from "react-router-dom";
+import Footer from "./components/footer/Footer";
 
 function App() {
     const dispatch = useDispatch();
@@ -20,7 +22,9 @@ function App() {
     // } else {
         return (
             <div className="App">
-                <Home/>
+                <Header/>
+                <Outlet/>
+                <Footer/>
             </div>
         );
     // }

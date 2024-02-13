@@ -17,6 +17,7 @@ import Address from "./pages/account/Address";
 import {store} from "./store";
 import { Provider as ReduxProvider } from "react-redux";
 import axios from "axios";
+import NeedAuth from "./components/needAuth/NeedAuth";
 
 axios.defaults.baseURL = 'https://frost.runtime.kz/api';
 
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/cart",
-                element: <CartList/>,
+                element: <NeedAuth><CartList/></NeedAuth>,
             },
             {
                 path: "/delivery",

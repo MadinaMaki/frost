@@ -28,7 +28,7 @@ function Header() {
             </div>
             <div className="header-inner container">
                 <Link to="/">
-                    <img className="header-logo" src={logo}/>
+                    <img className="header-logo" src={logo} alt="logo"/>
                 </Link>
                 <div className="contact">
                     <p>
@@ -42,13 +42,17 @@ function Header() {
                 </div>
                 <SearchInput/>
                 <div className="auth">
-                    <Link to="/account">
-                        <div>
-                            {authState.user ? <p>{authState.user.firstName} {authState.user.lastName}</p> : <p onClick={authOpen}>Вход в личный кабинет</p>}
-                        </div>
-                    </Link>
+                    <div>
+                        {authState.user ?
+                            <Link to="/account">
+                                <p>{authState.user.firstName} {authState.user.lastName}</p>
+                            </Link> :
+                            <div>
+                                <p onClick={authOpen}>Вход в личный кабинет</p>
+                                <p onClick={loginOpen}>Зарегистрироваться</p>
+                            </div>}
+                    </div>
                     {authState.user ? <p onClick={() => dispatch(signOut())}>Выйти</p> : <p/>}
-                    <p onClick={loginOpen} href="#">Зарегистрироваться</p>
                 </div>
                 <div className="cart">
                     <Link to="/cart">
