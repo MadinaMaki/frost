@@ -36,7 +36,7 @@ function OrderModal({product, visible, close, prodID}) {
             <div className="add_btn" onClick={productAdd}>
                 <Button text="Добавить в корзину" buttonStyle={buttonStyles.normal} onClick={close}/>
             </div>
-            <p>Продолжить выбор товаров</p>
+            <p onClick={close}>Продолжить выбор товаров</p>
         </Modal>
     );
 }

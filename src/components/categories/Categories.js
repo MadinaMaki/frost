@@ -3,6 +3,7 @@ import DropDown from "../../ui/drop_down/DropDown";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Availability from "../availability/Availability";
+import {useDispatch} from "react-redux";
 
 function Categories(props) {
     const [filterParams, setFilterParams] = useState({

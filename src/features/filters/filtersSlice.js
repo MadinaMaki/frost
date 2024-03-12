@@ -72,6 +72,9 @@ export const loadModels = brandId => dispatch => {
     }
 };
 
+export const loadGenerations = modelId => dispatch => {
+
+}
 
 export const {setProducts, setPageState, setBrands, setModels} = filtersSlice.actions;
 

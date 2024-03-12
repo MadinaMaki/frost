@@ -4,6 +4,7 @@ import Switch from "../../ui/switch/Switch";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import Categories from "../categories/Categories";
+import {useDispatch, useSelector} from "react-redux";
 
 function ProductList() {
     const [products, setProducts] = useState([]);
@@ -12,7 +13,13 @@ function ProductList() {
         totalPages: undefined,
     });
 
+    const productPage = useSelector(state => state.filter.productPage);
+    console.log('----',productPage);
+
+
     const [values, setValues] = useState({});
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         axios

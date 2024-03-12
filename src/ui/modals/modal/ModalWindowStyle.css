@@ -48,6 +48,12 @@
     align-self: center;
     color: #989898FF;
     font-size: 14px;
+    cursor: pointer;
+}
+
+.modal_main p:hover {
+    color: #1C499F;
+    transition: color .3s;
 }
 
 .modal_main .user_name {

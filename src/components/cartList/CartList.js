@@ -17,7 +17,6 @@ function CartList() {
 
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
-
     const cartItems = useSelector(state => state.cart.items);
 
     let total = 0;
@@ -47,7 +46,6 @@ function CartList() {
                                 <div>Цена</div>
                             </div>
                         </div>
-                        {}
                         <div>
                             {cartItems.map((item, index) => {
                                 return (

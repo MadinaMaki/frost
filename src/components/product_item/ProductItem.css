@@ -17,6 +17,11 @@
   text-transform: capitalize;
 }
 
+.ProductItem .item .title:hover {
+  color: #1C499F;
+  transition: color .3s;
+}
+
 .ProductItem .item .sub-title {
   margin: 0 0 10px 0;
 }
